@@ -8,17 +8,20 @@
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
+.disclaimer {
+  text-align: center;
+  width: 100%;
+}
+
 .cookie-banner{
   @extend .noselect;
+  @extend .disclaimer;
 
   background-color: black;
   bottom: 0;
   left: 0;
   color: white;
-  height: 25px;
   position: fixed;
-  text-align: center;
   padding-top: 10px;
   padding-bottom: 5px;
-  width: 100%;
 }
