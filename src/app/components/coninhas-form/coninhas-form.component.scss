@@ -1,7 +1,64 @@
-.disclaimer {
+@import '../../../styles/styles.scss';
+
+.form-footer {
+  @extend .text-center;
   margin-bottom: 100px;
 }
 
-h4{
-  padding-top: 25px;
+h4 {
+  padding-top: 20px;
+}
+
+.report-form {
+
+  .datetime-form,
+  .offense-form,
+  .cry-form,
+  .forget-form,
+  .reason-form {
+    @extend .row;
+
+    .date-control,
+    .hour-control {
+      @extend .col-auto;
+
+      input {
+        @extend .form-control;
+      }
+    }
+
+    .question {
+      @extend .col-12;
+    }
+
+    .option {
+      @extend .col-auto;
+
+      .option-inline {
+        @extend .form-check;
+        @extend .form-check-inline;
+
+        label {
+          @extend .form-check-label;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+          @extend .form-check-input;
+        }
+      }
+    }
+  }
+
+  .reason-form {
+    .option {
+      @extend .col-12;
+      @extend .col-sm-6;
+      @extend .col-md-6;
+      @extend .col-lg-4;
+      &:last-child {
+        @extend .col-12;
+      }
+    }
+  }
 }

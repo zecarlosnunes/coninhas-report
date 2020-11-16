@@ -1,116 +1,156 @@
-<form [formGroup]="reportForm" (ngSubmit)="onSubmit()">
-  <fieldset>
-    <div>
-      <div class="form-check form-check-inline">
-        <label class="form-check-label" for="date">Data da Ofensa: </label>
-        <input class="form-check-input" id="date" formControlName="date" type="date" />
-      </div>
-      <div class="form-check form-check-inline">
-        <label class="form-check-label" for="hour">Hora: </label>
-        <input class="form-check-input" id="hour" formControlName="hour" type="time" />
+<form class="report-form" [formGroup]="reportForm" (ngSubmit)="onSubmit()">
+  <div class="datetime-form">
+    <div class="date-control">
+      <label for="date">Data da Ofensa: </label>
+      <input class="form-control" id="date" formControlName="date" type="date" />
+    </div>
+    <div class="hour-control">
+      <label for="hour">Hora: </label>
+      <input class="form-control" id="hour" formControlName="hour" type="time" />
+    </div>
+  </div>
+  <div class="offense-form">
+    <h4 class="question">O que causou a ofensa?</h4>
+    <div class="option">
+      <div class="option-inline">
+        <input id="joke" formControlName="offense" type="radio" value="joke" />
+        <label for="joke">Uma piada</label>
       </div>
     </div>
-    <div>
-      <h4>O que causou a ofensa?</h4>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="joke" formControlName="offense" type="radio" value="joke" />
-        <label class="form-check-label" for="joke">Uma piada</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="news" formControlName="offense" type="radio" value="news" />
-        <label class="form-check-label" for="news">Uma notícia</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="opinion" formControlName="offense" type="radio" value="opinion" />
-        <label class="form-check-label" for="opinion">Uma opinião</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="stuff" formControlName="offense" type="radio" value="stuff" />
-        <label class="form-check-label" for="stuff">Coisas no geral</label>
+    <div class="option">
+      <div class="option-inline">
+        <input id="news" formControlName="offense" type="radio" value="news" />
+        <label for="news">Uma notícia</label>
       </div>
     </div>
-    <div>
-      <h4>Foi necessário um lenço para limpar as lágrimas?</h4>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="tearsyes" formControlName="tears" type="radio" value="yes" />
-        <label class="form-check-label" for="tearsyes">Sim</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="tearsno" formControlName="tears" type="radio" value="no" />
-        <label class="form-check-label" for="tearsno">Não</label>
+    <div class="option">
+      <div class="option-inline">
+        <input id="opinion" formControlName="offense" type="radio" value="opinion" />
+        <label for="opinion">Uma opinião</label>
       </div>
     </div>
-    <div>
-      <h4>Acha que consegue esquecer o assunto?</h4>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="tearsyes" formControlName="forget" type="radio" value="yes" />
-        <label class="form-check-label" for="tearsyes">Sim</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="tearsno" formControlName="forget" type="radio" value="no" />
-        <label class="form-check-label" for="tearsno">Não</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="tearsnotsure" formControlName="forget" type="radio" value="not_sure" />
-        <label class="form-check-label" for="tearsnotsure">Não tenho a certeza</label>
+    <div class="option">
+      <div class="option-inline">
+        <input id="stuff" formControlName="offense" type="radio" value="stuff" />
+        <label for="stuff">Coisas no geral</label>
       </div>
     </div>
-    <div formGroupName="reasons">
-      <h4>Razões que levaram à ofensa:</h4>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="pussy" formControlName="pussy" type="checkbox" />
-        <label class="form-check-label" for="pussy">Sou um coninhas</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="envy" formControlName="envy" type="checkbox" />
-        <label class="form-check-label" for="envy">Senti inveja de eu não ter graça</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="idiot" formControlName="idiot" type="checkbox" />
-        <label class="form-check-label" for="idiot">Sou um idiota</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="moral_superior" formControlName="moral_superior" type="checkbox" />
-        <label class="form-check-label" for="moral_superior">Sou moralmente superior</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="sensible" formControlName="sensible" type="checkbox" />
-        <label class="form-check-label" for="sensible">Sou muito sensível</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="blah" formControlName="blah" type="checkbox" />
-        <label class="form-check-label" for="blah">Enfiei a carapuça</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="sexualy_frustrated" formControlName="sexualy_frustrated" type="checkbox" />
-        <label class="form-check-label" for="sexualy_frustrated">Sou frustrado sexualmente</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="no_likes" formControlName="no_likes" type="checkbox" />
-        <label class="form-check-label" for="no_likes">Não tive likes hoje</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="puritane" formControlName="puritane" type="checkbox" />
-        <label class="form-check-label" for="puritane">Sou um falso puritano</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="shitty_life" formControlName="shitty_life" type="checkbox" />
-        <label class="form-check-label" for="shitty_life">A minha vida é uma merda</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="miss_mom" formControlName="miss_mom" type="checkbox" />
-        <label class="form-check-label" for="miss_mom">Sinto falta da minha mãe</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" id="another" formControlName="another" type="checkbox" />
-        <label class="form-check-label" for="another">Outra (explique em baixo)</label>
-      </div>
-      <div>
-        <textarea class="form-control" rows="5"></textarea>
+  </div>
+  <div class="cry-form">
+    <h4 class="question">Foi necessário um lenço para limpar as lágrimas?</h4>
+    <div class="option">
+      <div class="option-inline">
+        <input id="tearsyes" formControlName="tears" type="radio" value="yes" />
+        <label for="tearsyes">Sim</label>
       </div>
     </div>
-  </fieldset>
-  <div class="disclaimer">
+    <div class="option">
+      <div class="option-inline">
+        <input id="tearsno" formControlName="tears" type="radio" value="no" />
+        <label for="tearsno">Não</label>
+      </div>
+    </div>
+  </div>
+  <div class="forget-form">
+    <h4 class="question">Acha que consegue esquecer o assunto?</h4>
+    <div class="option">
+      <div class="option-inline">
+        <input id="forgetyes" formControlName="forget" type="radio" value="yes" />
+        <label for="forgetyes">Sim</label>
+      </div>
+    </div>
+    <div class="option">
+      <div class="option-inline">
+        <input id="forgetno" formControlName="forget" type="radio" value="no" />
+        <label for="forgetno">Não</label>
+      </div>
+    </div>
+    <div class="option">
+      <div class="option-inline">
+        <input id="forgetnotsure" formControlName="forget" type="radio" value="not_sure" />
+        <label for="forgetnotsure">Não tenho a certeza</label>
+      </div>
+    </div>
+  </div>
+  <div class="reason-form" formGroupName="reasons">
+    <h4 class="question">Razões que levaram à ofensa:</h4>
+    <div class="option">
+      <div class="option-inline">
+        <input id="pussy" formControlName="pussy" type="checkbox" />
+        <label for="pussy">Sou um coninhas</label>
+      </div>
+    </div>
+    <div class="option">
+      <div class="option-inline">
+        <input id="envy" formControlName="envy" type="checkbox" />
+        <label for="envy">Senti inveja de eu não ter graça</label>
+      </div>
+    </div>
+    <div class="option">
+      <div class="option-inline">
+        <input id="idiot" formControlName="idiot" type="checkbox" />
+        <label for="idiot">Sou um idiota</label>
+      </div>
+    </div>
+    <div class="option">
+      <div class="option-inline">
+        <input id="moral_superior" formControlName="moral_superior" type="checkbox" />
+        <label for="moral_superior">Sou moralmente superior</label>
+      </div>
+    </div>
+    <div class="option">
+      <div class="option-inline">
+        <input id="sensible" formControlName="sensible" type="checkbox" />
+        <label for="sensible">Sou muito sensível</label>
+      </div>
+    </div>
+    <div class="option">
+      <div class="option-inline">
+        <input id="blah" formControlName="blah" type="checkbox" />
+        <label for="blah">Enfiei a carapuça</label>
+      </div>
+    </div>
+    <div class="option">
+      <div class="option-inline">
+        <input id="sexualy_frustrated" formControlName="sexualy_frustrated" type="checkbox" />
+        <label for="sexualy_frustrated">Sou frustrado sexualmente</label>
+      </div>
+    </div>
+    <div class="option">
+      <div class="option-inline">
+        <input id="no_likes" formControlName="no_likes" type="checkbox" />
+        <label for="no_likes">Não tive likes hoje</label>
+      </div>
+    </div>
+    <div class="option">
+      <div class="option-inline">
+        <input id="puritane" formControlName="puritane" type="checkbox" />
+        <label for="puritane">Sou um falso puritano</label>
+      </div>
+    </div>
+    <div class="option">
+      <div class="option-inline">
+        <input id="shitty_life" formControlName="shitty_life" type="checkbox" />
+        <label for="shitty_life">A minha vida é uma merda</label>
+      </div>
+    </div>
+    <div class="option">
+      <div class="option-inline">
+        <input id="miss_mom" formControlName="miss_mom" type="checkbox" />
+        <label for="miss_mom">Sinto falta da minha mãe</label>
+      </div>
+    </div>
+    <div class="option">
+      <div class="option-inline">
+        <input id="another" formControlName="another" type="checkbox" />
+        <label for="another">Outra (explique em baixo)</label>
+      </div>
+    </div>
+    <div class="option">
+      <textarea class="form-control" rows="5"></textarea>
+    </div>
+  </div>
+  <div class="form-footer">
     <div>(escrever no verso, se necessário)</div>
     <button type="submit" class="btn btn-dark">Submeter</button>
   </div>
