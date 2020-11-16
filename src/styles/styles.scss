@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'bootstrap.scss';
+
 *{
   font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 .noselect {
@@ -18,7 +21,7 @@
   text-align: center;
 }
 
-// textarea
-// {
-//   width:100%;
-// }
+textarea
+{
+  resize: none !important;
+}
